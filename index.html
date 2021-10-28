@@ -4,13 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora</title>
+  <title>maps</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+  <style>
+    #map {
+      height: 100%;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
 <body>
-    <input type="number" name="num1" id="num1"> +
-    <input type="number" name="num2" id="num2">
-    <button id="somar">Calcular</button>
-    
-    <script src="index.js"></script>
+
+  <label>
+    Latitude: <span id="lat"></span>
+  </label>
+  <label>
+     Longitude: <span id="lon"></span>
+  </label>
+    <div id="map"></div>
 </body>
+
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqUyvP5E9Rg2kAN6wzzkq8fS5vopNnwhU&callback=initMap&v=weekly"
+async
+></script>
+
+<script type="text/javascript" src="index.js"></script>
 </html>

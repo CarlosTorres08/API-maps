@@ -1,13 +1,23 @@
-function calcular () {
-  let number1 = document.getElementById("num1").value
-  let number2 = document.getElementById("num2").value
-  let n = Number(number1)
-  let s = Number(number2)
-  let calcular = n + s
-  alert(calcular)
-  
+var lat;
+var lon;
+function getLocation(){
+  if(!navigator.geolocation)
+    return null;
+  navigator.geolocation.getCurrentPosition((pos)=> {
+    lat = document.getElementById('lat').innerText = pos.coords.latitude;
+    lon = document.getElementById('lon').innerText = pos.coords.longitude;
+    initmap;
+  })
 }
-document.getElementById('somar').addEventListener('click', (evento) => {
-    // callback aqui
-    calcular()
-    })
+
+
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -33, lng: -53 },
+    zoom: 8,
+  });
+}
+
+ getLocation();
